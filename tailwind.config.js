@@ -7,12 +7,42 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        "nav-color": "#333333",
+        "button-bg": "#111",
+        "button-text": "#fff",
+        "button-border": "rgba(25, 118, 210, 0.5)",
+      },
+      padding: {
+        7.5: "30px",
+      },
+      screens: {
+        xs: "400px",
+      },
+      maxWidth: {
+        "10xl": "1680px",
+      },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+      },
+      spacing: {
+        "button-padding": "5px 15px",
+      },
+      borderRadius: {
+        "button-radius": "2.25rem",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities(
+        {
+          ".box-inherit": {
+            "box-sizing": "inherit",
+          },
+        },
+        ["responsive", "hover"]
+      );
+    },
+  ],
 };

@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+  @apply px-[30px] py-3 h-[60px];
+
+  @media (max-width: 600px) {
+    .navbar {
+      @apply bg-transparent;
+    }
+  }
+}
+
+/* Define styles for the Login button */
+.btn-login {
+  @apply inline-flex items-center justify-center px-4 py-2 w-[64px] h-[23px] bg-white text-black font-bold text-sm rounded-lg outline outline-[1px] outline-black cursor-pointer;
+
+   /* Media queries */
+  @media (hover: none) {
+    &:hover {
+      @apply bg-blue-500;  /* Use color from Tailwind */
+    }
+  }
+
+  /* Hide button on mobile devices */
+  @media (min-width: 0px) {
+    display: none;
+  }
+
+   /* Show button on screens wider than 600px */
+  @media (min-width: 600px) {
+    display: inline-flex;
+  }
+  &:hover {
+    outline: 2px solid black; /* Change border on hover */
+  }
+}
+
+/* Other classes using @apply */
+
+@layer components {
+  .header-h1 {
+    @apply m-0 text-black text-[34px] font-black tracking-tighter not-italic leading-[38px] font-inter break-words pb-2.5;
+  }
+  .header-h2 {
+    @apply m-0 text-black text-[18px] font-semibold not-italic leading-[22px] font-inter break-words pb-[34px] tracking-tight;
+  }
+  .header-h3 {
+    @apply m-0 text-gray-500 text-[16px] font-semibold not-italic leading-[22px] font-inter break-words pb-[34px] tracking-wide;
+  }
+  .custom-box {
+    @apply flex items-start justify-start;
+  }
+  .custom-list {
+    @apply w-[10px] h-[10px] p-[10px] bg-[#5b86f3] rounded-full flex flex-col items-center justify-center gap-[10px] mr-[10px] text-white font-bold;
+  }
+  .custom-p {
+    @apply text-[18px] font-semibold text-[#111] leading-[1.3] break-words 
+  }
+  .custom-button-back {
+    @apply w-[50px] h-[50px] bg-black rounded-full flex items-center justify-center;    
+  } 
+  .custom-card {
+    @apply flex flex-col items-start text-start justify-between  text-base capitalize break-words w-[140px] h-[140px] text-white p-3 bg-blue-600   outline-0 cursor-pointer select-none align-middle appearance-none no-underline font-sans border border-[#000000]  transition-all rounded-[15px] text-[1rem] leading-[1.25rem] font-bold;
+    box-shadow: -3px 5px 1px rgba(1, 1, 1, 1);
+  }
+  
+    
+  
+  .custom-button {
+    @apply flex items-center justify-center relative box-border outline-0 m-auto cursor-pointer select-none align-middle appearance-none no-underline font-sans p-[5px_15px] border border-[#ffffff] w-full transition-all duration-200 bg-[#111] text-[#fff] min-h-[48px] min-w-[155px] rounded-[2.25rem] text-[1rem] leading-[1.25rem] font-bold;
+    /* Add a black opaque shadow offset to the left */
+    box-shadow: -3px 5px 1px rgba(1, 1, 1, 1);
+  }
+
+  /* Media query for screen widths >= 600px */
+  @media (min-width: 600px) {
+    .custom-button {
+      width: 250px;
+    }
+  }
+
+  
+}
+
+
+
+.flexCenter {
+  @apply flex justify-center items-center;
+}
+
+.flexBetween {
+  @apply flex justify-between items-center;
+}
+
+.flexStart {
+  @apply flex items-start justify-start;
+}
+
+.text-small {
+  @apply text-sm font-medium;
+}
+
+.paddings {
+  @apply lg:px-20 py-6 px-5;
+}
+
