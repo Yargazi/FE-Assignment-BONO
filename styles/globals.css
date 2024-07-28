@@ -71,15 +71,13 @@
   .custom-card {
     @apply flex flex-col items-start text-start justify-between  text-base capitalize break-words w-[140px] h-[140px] text-white p-3 bg-blue-600   outline-0 cursor-pointer select-none align-middle appearance-none no-underline font-sans border border-[#000000]  transition-all rounded-[15px] text-[1rem] leading-[1.25rem] font-bold;
     box-shadow: -3px 5px 1px rgba(1, 1, 1, 1);
-  }
-  
-    
-  
+  }     
   .custom-button {
     @apply flex items-center justify-center relative box-border outline-0 m-auto cursor-pointer select-none align-middle appearance-none no-underline font-sans p-[5px_15px] border border-[#ffffff] w-full transition-all duration-200 bg-[#111] text-[#fff] min-h-[48px] min-w-[155px] rounded-[2.25rem] text-[1rem] leading-[1.25rem] font-bold;
     /* Add a black opaque shadow offset to the left */
     box-shadow: -3px 5px 1px rgba(1, 1, 1, 1);
   }
+  
 
   /* Media query for screen widths >= 600px */
   @media (min-width: 600px) {
@@ -87,7 +85,9 @@
       width: 250px;
     }
   }
-
+  .custom-shadow {
+    box-shadow: -3px 5px 1px rgba(1, 1, 1, 1);
+  }
   
 }
 

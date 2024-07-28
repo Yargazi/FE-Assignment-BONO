@@ -13,7 +13,7 @@ const useCauses = () => {
           "https://dev.api.bono.so/v1/charity/causes"
         );
         const result = await response.json();
-        setCauses(result.data); // Устанавливаем данные из поля "data"
+        setCauses(result.data); 
         setLoading(false);
       } catch (err) {
         setError(err.message);

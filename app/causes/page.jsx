@@ -3,10 +3,14 @@ import ArrowIcon from "@/components/ArrowIcon";
 import { useRouter } from "next/navigation";
 import useCauses from "./useCauses";
 import Card from "@/components/Card";
+import Modal from "@/components/Modal";
+import useCardSelection from "../hocks/useCardSelection";
 
 const CauseSelection = () => {
   const router = useRouter();
   const { causes, loading, error } = useCauses();
+  const { selectedCards, handleCardClick, isModalOpen, closeModal } =
+    useCardSelection();
 
   const handleButtonClick = () => {
     router.push("/");
@@ -27,11 +31,19 @@ const CauseSelection = () => {
         </h2>
         {loading && <p>Loading...</p>}
         {error && <p>Error loading causes: {error.message}</p>}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 w-fit m-auto sm:grid-cols-2 grid-flow-row lg:grid-cols-3 gap-4">
           {causes &&
             causes
               .slice(0, 9)
-              .map((cause) => <Card id={cause.id} title={cause.title} />)}
+              .map((cause) => (
+                <Card
+                  key={cause.id}
+                  id={cause.id}
+                  title={cause.title}
+                  handleCardClick={handleCardClick}
+                  isChecked={selectedCards.includes(cause.id)}
+                />
+              ))}
         </div>
         <div className="custom-button mt-16 self-center ">
           <p>Continue</p>
@@ -40,6 +52,7 @@ const CauseSelection = () => {
           </span>
         </div>
       </div>
+      {isModalOpen && <Modal onClose={closeModal} />}
     </section>
   );
 };
