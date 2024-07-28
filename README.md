@@ -4,7 +4,7 @@ This project, developed as a test assignment for Bono, demonstrates a comprehens
 
 - API Integration: Efficient fetching and rendering of data from Bono’s API endpoints, ensuring real-time updates and accurate data representation.
 
-  -Tailwind CSS for Styling: Leveraging Tailwind CSS for a clean, responsive, and visually appealing design, ensuring consistency across different screen sizes.
+- Tailwind CSS for Styling: Leveraging Tailwind CSS for a clean, responsive, and visually appealing design, ensuring consistency across different screen sizes.
 
 - Icon Toggle Feature: Implementation of a seamless icon toggle functionality that enhances user interaction by changing icons upon user actions.
 
