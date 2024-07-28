@@ -2,6 +2,7 @@
 import ArrowIcon from "@/components/ArrowIcon";
 import { useRouter } from "next/navigation";
 import useCauses from "./useCauses";
+import Card from "@/components/Card";
 
 const CauseSelection = () => {
   const router = useRouter();
@@ -28,11 +29,9 @@ const CauseSelection = () => {
         {error && <p>Error loading causes: {error.message}</p>}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {causes &&
-            causes.slice(0, 9).map((cause) => (
-              <div key={cause.id} className="custom-card">
-                <p>{cause.title}</p> <span>+</span>
-              </div>
-            ))}
+            causes
+              .slice(0, 9)
+              .map((cause) => <Card id={cause.id} title={cause.title} />)}
         </div>
         <div className="custom-button mt-16 self-center ">
           <p>Continue</p>
