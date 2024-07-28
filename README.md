@@ -1,3 +1,19 @@
+# FE-Assignment-BONO
+
+This project, developed as a test assignment for Bono, demonstrates a comprehensive application of modern web development practices using Next.js and React. The project integrates various technologies and techniques to create a dynamic, user-friendly interface. Key highlights include:
+
+- API Integration: Efficient fetching and rendering of data from Bono’s API endpoints, ensuring real-time updates and accurate data representation.
+
+  -Tailwind CSS for Styling: Leveraging Tailwind CSS for a clean, responsive, and visually appealing design, ensuring consistency across different screen sizes.
+
+- Icon Toggle Feature: Implementation of a seamless icon toggle functionality that enhances user interaction by changing icons upon user actions.
+
+- Interactive Components: Creating interactive and stateful components using React’s hooks, enhancing the user experience by providing real-time feedback and updates.
+
+- The Open Graph Protocol: Utilization of The Open Graph protocol to improve the integration with social media platforms, enhancing content sharing and visibility.
+
+This project not only showcases the technical prowess in handling complex front-end development tasks but also reflects a keen eye for detail and user experience design, making it a robust and scalable solution.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -34,4 +50,3 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# FE-Assignment-BONO
