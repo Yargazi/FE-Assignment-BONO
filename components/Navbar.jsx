@@ -5,7 +5,7 @@ import LoginButton from "./LoginButton";
 const Navbar = () => {
   const session = NaN;
   return (
-    <nav className="flexBetween navbar  bg-white sm:bg-nav-color">
+    <nav className="flexBetween navbar  bg-white  sm:bg-nav-color">
       <div className="flex-1 flexStart gap-10 py-6">
         <Link href="/">
           <Image

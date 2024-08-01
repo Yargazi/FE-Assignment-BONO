@@ -1,17 +1,22 @@
 "use client";
-
 import IconToggle from "../app/hocks/IconToggle";
-import useCardSelection from "../app/hocks/useCardSelection";
 
-const Card = ({ id, title, handleCardClick, isChecked }) => {
+const Card = ({ cause, handleCardClick, isChecked, isDisabled }) => {
   const handleClick = () => {
-    handleCardClick(id);
+    if (!isDisabled) {
+      handleCardClick(cause);
+    }
   };
 
   return (
-    <div className="custom-card" onClick={handleClick}>
-      <p>{title}</p>
-
+    <div
+      className={`custom-card ${
+        isDisabled ? "cursor-not-allowed" : "cursor-pointer"
+      }`}
+      style={{ backgroundColor: cause.impactBackground }}
+      onClick={handleClick}
+    >
+      <p>{cause.title}</p>
       <IconToggle isChecked={isChecked} />
     </div>
   );

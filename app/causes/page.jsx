@@ -1,32 +1,40 @@
 "use client";
-import ArrowIcon from "@/components/ArrowIcon";
 import { useRouter } from "next/navigation";
-import useCauses from "./useCauses";
+import useCauses from "../hocks/useCauses";
+import useCardSelection from "../hocks/useCardSelection";
+import Spinner from "@/components/Spinner";
 import Card from "@/components/Card";
 import Modal from "@/components/Modal";
-import Spinner from "@/components/Spinner";
+import BoxInfo from "@/components/BoxInfo";
 import ProgressBar from "@/components/ProgressBar";
-import useCardSelection from "../hocks/useCardSelection";
+import ArrowIcon from "@/components/ArrowIcon";
 
 const CauseSelection = () => {
   const router = useRouter();
+
   const { causes, loading, error } = useCauses();
-  const { selectedCards, handleCardClick, isModalOpen, closeModal } =
-    useCardSelection();
+
+  const {
+    selectedCards,
+    selectedCause,
+    handleCardClick,
+    isModalOpen,
+    closeModal,
+  } = useCardSelection(causes); // Передаем causes в хук
 
   const handleButtonClick = () => {
     router.push("/");
   };
 
   return (
-    <section className="w-full flex-center p-7.5  sm:p-8 relative">
-      <div
-        className="custom-button-back rotate-180 cursor-pointer absolute top-5 left-10 z-10"
-        onClick={handleButtonClick}
-      >
+    <section className="w-full flex flex-center justify-center p-7.5 sm:p-8 relative">
+      <div className="custom-button-back" onClick={handleButtonClick}>
         <ArrowIcon />
       </div>
-      <div className="max-w-max m-auto box-inherit">
+
+      <div className="flex-1 max-w-xl shrink "></div>
+
+      <div className="box-inherit shrink-0">
         <h1 className="header-h1">What do you care deeply about?</h1>
         <h2 className="header-h3 text-center">
           Pick the 3 causes that mostly care about:
@@ -40,7 +48,6 @@ const CauseSelection = () => {
         {error && <p>Error loading causes: {error.message}</p>}
 
         {!loading && (
-          //hide elements when loading
           <div>
             <div className="grid grid-cols-1 w-fit m-auto sm:grid-cols-2 grid-flow-row lg:grid-cols-3 gap-4">
               {causes &&
@@ -49,14 +56,13 @@ const CauseSelection = () => {
                   .map((cause) => (
                     <Card
                       key={cause.id}
-                      id={cause.id}
-                      title={cause.title}
-                      handleCardClick={handleCardClick}
+                      cause={cause}
+                      handleCardClick={() => handleCardClick(cause)}
                       isChecked={selectedCards.includes(cause.id)}
                     />
                   ))}
             </div>
-            <div className=" flex justify-center mt-10">
+            <div className="flex justify-center mt-10">
               <ProgressBar selectedCards={selectedCards} />
             </div>
           </div>
@@ -70,7 +76,11 @@ const CauseSelection = () => {
         </div>
       </div>
 
-      {isModalOpen && <Modal onClose={closeModal} />}
+      <div className="flex-1 max-w-xl shrink">
+        {selectedCause && <BoxInfo cause={selectedCause} />}
+      </div>
+
+      {isModalOpen && <Modal onClose={closeModal}></Modal>}
     </section>
   );
 };

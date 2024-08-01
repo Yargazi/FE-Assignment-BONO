@@ -8,6 +8,12 @@ const nextConfig = {
         port: "",
         pathname: "/images/**",
       },
+      {
+        protocol: "https",
+        hostname: "bono-webapp-causes-images.s3.amazonaws.com",
+        port: "",
+        pathname: "/global/**",
+      },
     ],
   },
 };

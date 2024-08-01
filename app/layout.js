@@ -45,6 +45,10 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
           rel="stylesheet"
         ></link>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
         <FaviconLoader url={faviconApiUrl} />
       </Head>
       <body>

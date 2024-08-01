@@ -3,8 +3,8 @@ import Head from "next/head";
 const CausesLayout = ({ children }) => {
   return (
     <>
+      <title>Causes | Bono</title>
       <Head>
-        <title>Causes - Bono</title>
         <meta
           name="description"
           content="Explore various causes to support on Bono."
