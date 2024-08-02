@@ -39,9 +39,9 @@ const CauseSelection = () => {
   };
 
   return (
-    <section className="w-full flex flex-center justify-center p-7.5 sm:p-8 relative">
+    <section className="w-full flex flex-center justify-center p-7.5 sm:p-8 relative ">
       <div className="custom-button-back" onClick={handleGoBackClick}>
-        <ArrowIcon />
+        <ArrowIcon className="arrow-icon" />
       </div>
 
       <div className="flex-1 max-w-xl shrink "></div>
@@ -86,12 +86,12 @@ const CauseSelection = () => {
         >
           <p>Continue</p>
           <span className="ml-2 flex items-center">
-            <ArrowIcon />
+            <ArrowIcon className="arrow-icon" />
           </span>
         </div>
       </div>
 
-      <div className="flex-1 max-w-xl shrink">
+      <div className="flex-1 max-w-xl shrink ">
         {selectedCause && <BoxInfo cause={selectedCause} />}
       </div>
 

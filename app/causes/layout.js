@@ -19,7 +19,7 @@ const CausesLayout = ({ children }) => {
         <meta property="og:site_name" content="Bono" />
         <meta property="og:locale" content="en_US" />
       </Head>
-      <div>{children}</div>
+      <div className="hide-scrollbar-vertical hide-scrollbar">{children}</div>
     </>
   );
 };

@@ -31,6 +31,14 @@ module.exports = {
       borderRadius: {
         "button-radius": "2.25rem",
       },
+      borderWidth: {
+        DEFAULT: "1px",
+        3: "3px",
+      },
+      boxShadow: {
+        "custom-normal": "-3px 5px 1px rgba(1, 1, 1, 1)",
+        "custom-hover": "-1px 1px 3px rgba(1, 1, 1, 1)",
+      },
     },
   },
   plugins: [
