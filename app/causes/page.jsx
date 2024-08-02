@@ -29,12 +29,18 @@ const CauseSelection = () => {
     router.push("/");
   };
 
+  const continueClick = () => {
+    handleButtonClick();
+  };
   const handleButtonClick = () => {
     if (selectedCards.length === 0) {
       setModalText(
         "Please pick 3 causes for your portfolio in order to continue"
       );
       setIsModalOpen(true);
+    }
+    if (selectedCards.length === 3) {
+      router.push("/signUp");
     }
   };
 
@@ -85,7 +91,7 @@ const CauseSelection = () => {
           onClick={handleButtonClick}
         >
           <p>Continue</p>
-          <span className="ml-2 flex items-center">
+          <span className="ml-2 flex items-center" onClick={continueClick}>
             <ArrowIcon className="arrow-icon" />
           </span>
         </div>
