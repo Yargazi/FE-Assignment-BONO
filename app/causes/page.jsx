@@ -19,16 +19,28 @@ const CauseSelection = () => {
     selectedCause,
     handleCardClick,
     isModalOpen,
+    setIsModalOpen,
     closeModal,
-  } = useCardSelection(causes); // Передаем causes в хук
+    modalText,
+    setModalText,
+  } = useCardSelection(causes);
+
+  const handleGoBackClick = () => {
+    router.push("/");
+  };
 
   const handleButtonClick = () => {
-    router.push("/");
+    if (selectedCards.length === 0) {
+      setModalText(
+        "Please pick 3 causes for your portfolio in order to continue"
+      );
+      setIsModalOpen(true);
+    }
   };
 
   return (
     <section className="w-full flex flex-center justify-center p-7.5 sm:p-8 relative">
-      <div className="custom-button-back" onClick={handleButtonClick}>
+      <div className="custom-button-back" onClick={handleGoBackClick}>
         <ArrowIcon />
       </div>
 
@@ -40,7 +52,7 @@ const CauseSelection = () => {
           Pick the 3 causes that mostly care about:
         </h2>
         {loading && (
-          <div className="flex justify-center">
+          <div className="flex justify-center my-[15rem]">
             <Spinner />
           </div>
         )}
@@ -68,7 +80,10 @@ const CauseSelection = () => {
           </div>
         )}
 
-        <div className="custom-button mt-5 self-center ">
+        <div
+          className="custom-button mt-5 self-center "
+          onClick={handleButtonClick}
+        >
           <p>Continue</p>
           <span className="ml-2 flex items-center">
             <ArrowIcon />
@@ -80,7 +95,7 @@ const CauseSelection = () => {
         {selectedCause && <BoxInfo cause={selectedCause} />}
       </div>
 
-      {isModalOpen && <Modal onClose={closeModal}></Modal>}
+      {isModalOpen && <Modal onClose={closeModal} modalText={modalText} />}
     </section>
   );
 };
