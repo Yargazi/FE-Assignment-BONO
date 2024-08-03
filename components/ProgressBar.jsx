@@ -23,8 +23,8 @@ const ProgressBar = ({ selectedCards }) => {
   const progressValue = (count / 3) * 100;
 
   return (
-    <Box sx={{ width: "80%" }}>
-      <p className="text-center font-semibold font-inter pb-3">
+    <Box className="w-full lg:w-[80%]">
+      <p className="text-start font-semibold font-inter pb-3 lg:text-center">
         {count}/3 causes added
       </p>
       <BorderLinearProgress variant="determinate" value={progressValue} />

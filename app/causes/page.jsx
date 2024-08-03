@@ -45,16 +45,21 @@ const CauseSelection = () => {
   };
 
   return (
-    <section className="w-full flex flex-center justify-center p-7.5 sm:p-8 relative ">
-      <div className="custom-button-back" onClick={handleGoBackClick}>
+    <section className="w-full min-w-[320px] flex flex-center justify-center p-7.5 sm:p-8 relative flex-col lg:flex-row">
+      <div
+        className="custom-button-back lg:absolute lg:top-8 lg:left-24 inline-flex m-2 static self-start mb-4 lg:mb-0"
+        onClick={handleGoBackClick}
+      >
         <ArrowIcon className="arrow-icon" />
       </div>
 
       <div className="flex-1 max-w-xl shrink "></div>
 
-      <div className="box-inherit shrink-0">
-        <h1 className="header-h1">What do you care deeply about?</h1>
-        <h2 className="header-h3 text-center">
+      <div className="box-inherit shrink-0 lg:w-fit ">
+        <h1 className="header-h1 text-start lg:text-center">
+          What do you care deeply about?
+        </h1>
+        <h2 className="header-h3 text-start lg:text-center">
           Pick the 3 causes that mostly care about:
         </h2>
         {loading && (
@@ -67,7 +72,7 @@ const CauseSelection = () => {
 
         {!loading && (
           <div>
-            <div className="grid grid-cols-1 w-fit m-auto sm:grid-cols-2 grid-flow-row lg:grid-cols-3 gap-4">
+            <div className="grid grid-rows-2 grid-flow-col gap-3 pb-6 pl-1 m-auto overflow-x-scroll touch-pan-x scroll-smooth lg:grid lg:grid-cols-3 lg:grid-rows-3 lg:overflow-hidden lg:w-fit">
               {causes &&
                 causes
                   .slice(0, 9)
@@ -97,7 +102,7 @@ const CauseSelection = () => {
         </div>
       </div>
 
-      <div className="flex-1 max-w-xl shrink ">
+      <div className="flex-1 max-w-xl shrink">
         {selectedCause && <BoxInfo cause={selectedCause} />}
       </div>
 

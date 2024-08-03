@@ -8,8 +8,8 @@ const Welcome = () => {
     router.push("/causes");
   };
   return (
-    <section className="w-full flex-center p-7.5 sm:p-8">
-      <div className="pt-[113px] max-w-max m-auto .box-inherit ">
+    <section className="w-full flex-center p-7.5 min-w-[320px] sm:p-8">
+      <div className=" max-w-max m-auto box-inherit sm:pt-[80px]">
         <h1 className="header-h1">Let's build your nonprofit portfolio</h1>
         <h2 className="header-h2">
           Join the movement and help fix the October 7th aftermath

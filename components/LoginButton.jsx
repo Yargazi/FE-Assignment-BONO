@@ -9,12 +9,9 @@ const LoginButton = () => {
     router.push("/signUp");
   };
   return (
-    <button
-      onClick={handleClick}
-      className="btn-login inline-flex items-center justify-center px-4 py-2 bg-white text-black font-bold text-sm rounded-full outline outline-2 outline-black cursor-pointer"
-    >
+    <div onClick={handleClick} className="btn-login hover:custom-shadow">
       Login
-    </button>
+    </div>
   );
 };
 

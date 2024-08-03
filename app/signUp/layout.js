@@ -4,7 +4,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Head>
-        <title>Sign Up - YourAppName</title>
+        <title>Sign Up - Bono</title>
         <meta
           name="description"
           content="Sign up for YourAppName to get started."

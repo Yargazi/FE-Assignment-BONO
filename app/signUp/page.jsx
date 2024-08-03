@@ -20,28 +20,31 @@ const SignUpScreen = () => {
   };
 
   return (
-    <div className="flex flex-col items-center  min-h-screen p-4 bg-white relative">
+    <div className="flex flex-col items-center  min-h-screen min-w-[320px] mx-auto pt-6 bg-white relative">
       <div
-        className="custom-button-back absolute top-5 left-10"
+        className="custom-button-back lg:absolute lg:top-[32px] lg:left-[-48px] inline-flex m-2 ml-[8%] static self-start"
         onClick={handleGoBackClick}
       >
         <ArrowIcon className="arrow-icon" />
       </div>
-      <div className="max-w-lg w-full bg-white pt-3 text-center">
-        <div className="header-h1">Let's save your portfolio</div>
-        <div className="header-h2 font-semibold pt-3">
-          You'll receive weekly impact reports from Bono. Your email is not
-          shared with anyone!
+      <div className="max-w-[450px] text-start  w-full bg-white pt-3 lg:text-center">
+        <div className="header-h1 mx-[40px] md:mx-0">
+          Let's save your portfolio
+        </div>
+        <div className="header-h2 mx-[40px] md:mx-0 font-medium pt-3 tracking-normal">
+          You'll receive weekly impact reports from Bono.
+          <br /> Your email is not shared with anyone!
         </div>
       </div>
-      <div className="max-w-sm w-full bg-white p-3 ">
-        <div className="flex justify-center py-3 mb-3 gap-2 font-bold border border-solid border-black rounded-full">
-          {" "}
-          <GoogleIcon /> <p>Continue</p> <p>With Google</p>{" "}
+      <div className="max-w-sm w-full bg-white px-3 pb-3 ">
+        <div className="flex justify-center py-3 mb-4 gap-2 font-bold border border-solid border-black rounded-full hover:shadow-[1px_1px_3px_rgba(1,1,1,1)] cursor-pointer">
+          <GoogleIcon />
+          <p>Continue</p>
+          <p>With Google</p>
         </div>
         <form onSubmit={handleSubmit}>
           <label className="block mb-4">
-            <Divider>
+            <Divider className="my-6">
               {" "}
               <p className="mx-3">or</p>{" "}
             </Divider>
@@ -50,7 +53,7 @@ const SignUpScreen = () => {
               placeholder="Your name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="mt-6 block w-full px-3 py-2 border border-[#333333] rounded-md shadow-sm focus:outline-none focus:ring focus:ring-[#333333] focus:border-[#333333] sm:text-sm"
+              className="custom-input"
               required
             />
             <input
@@ -58,14 +61,17 @@ const SignUpScreen = () => {
               placeholder="Your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border border-[#333333] rounded-md shadow-sm focus:outline-none focus:ring focus:ring-[#333333] focus:border-[#333333] sm:text-sm"
+              className="custom-input hover:ring-0  "
               required
             />
           </label>
           <p className="text-gray-500">
             You will receive a temporary password by email
           </p>
-          <button type="submit" className="custom-button mt-16 self-center">
+          <button
+            type="submit"
+            className="custom-button mt-6 w-[350px] first-line:self-center"
+          >
             Save & continue
             <span className="ml-2 flex items-center">
               <ArrowIcon />

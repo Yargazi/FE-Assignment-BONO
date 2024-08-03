@@ -8,45 +8,6 @@
   box-sizing: border-box;
 }
 
-/* Navbar */
-.navbar {
-  @apply px-[30px] py-3 h-[60px];
-
-  @media (max-width: 600px) {
-    .navbar {
-      @apply bg-transparent;
-    }
-  }
-}
-
-/* Define styles for the Login button */
-.btn-login {
-  @apply inline-flex items-center justify-center px-4 py-2 w-[64px] h-[23px] bg-white text-black font-bold text-sm rounded-lg outline outline-[1px] outline-black cursor-pointer;
-
-   /* Media queries */
-  @media (hover: none) {
-    &:hover {
-      @apply bg-blue-500;  /* Use color from Tailwind */
-      
-    }
-  }
-
-  /* Hide button on mobile devices */
-  @media (min-width: 0px) {
-    display: none;
-  }
-
-   /* Show button on screens wider than 600px */
-  @media (min-width: 600px) {
-    display: inline-flex;
-  }
-  &:hover {
-    outline: 2px solid black; /* Change border on hover */
-  }
-}
-
-/* Other classes using @apply */
-
 @layer components {
   .header-h1 {
     @apply m-0 text-black text-[34px] font-black tracking-tighter not-italic leading-[38px] font-inter break-words pb-2.5;
@@ -90,6 +51,12 @@
   .custom-button:hover {
     box-shadow: -5px 7px 1px rgba(1, 1, 1, 1);
   }
+  .custom-input {
+    @apply mt-1 block w-full px-3 py-3  mb-3 border border-[#333333] rounded-md shadow-sm focus:outline-none focus:ring focus:ring-[#333333] focus:border-[#333333] sm:text-sm hover:ring hover:ring-[#333333]
+  }
+  .custom-input-2 {
+    @apply mt-1 block w-full px-3 py-3  mb-3 border border-[#333333] rounded-md shadow-sm focus:outline-none focus:ring focus:ring-[#333333] focus:border-[#333333] sm:text-sm hover:ring hover:ring-[#333333]
+  }
 
   /* Media query for screen widths >= 600px */
   @media (min-width: 600px) {
@@ -100,7 +67,15 @@
   .custom-shadow {
     box-shadow: -3px 5px 1px rgba(1, 1, 1, 1);
   }
+/* Navbar */
+.navbar {
+  @apply flex justify-between items-center px-[30px] py-3 h-[60px] bg-nav-color;
   
+}
+/* Define styles for the Login button */
+.btn-login {
+  @apply inline-flex items-center justify-center px-4 py-2 w-[64px] h-[23px] bg-white text-black font-bold text-sm rounded-md outline outline-2 outline-black cursor-pointer;
+}
 }
 
 
