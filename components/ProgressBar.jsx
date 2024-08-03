@@ -23,7 +23,7 @@ const ProgressBar = ({ selectedCards }) => {
   const progressValue = (count / 3) * 100;
 
   return (
-    <Box className="w-full lg:w-[80%]">
+    <Box className="w-full ">
       <p className="text-start font-semibold font-inter pb-3 lg:text-center">
         {count}/3 causes added
       </p>
