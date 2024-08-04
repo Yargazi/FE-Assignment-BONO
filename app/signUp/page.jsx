@@ -39,7 +39,7 @@ const SignUpScreen = () => {
   };
 
   const handleGoBackClick = () => {
-    router.push("/");
+    router.back();
   };
 
   return (

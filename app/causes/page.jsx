@@ -25,7 +25,7 @@ const CauseSelection = () => {
   } = useCardSelection(causes);
 
   const handleGoBackClick = () => {
-    router.push("/");
+    router.back();
   };
 
   const handleButtonClick = () => {
