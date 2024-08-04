@@ -60,9 +60,9 @@ const CauseSelection = () => {
   }, []);
 
   return (
-    <section className="w-full min-w-[320px] flex flex-center justify-center p-7.5 sm:p-8 relative flex-col">
+    <section className="w-full min-w-[320px] flex flex-center justify-center p-7.5 pt-0 xl:p-8 relative flex-col">
       <div
-        className="custom-button-back xl:absolute xl:top-8 xl:left-24 inline-flex m-2 static self-start mb-4 xl:mb-0"
+        className="custom-button-back  inline-flex m-2 static self-start mb-4 xl:absolute xl:top-8 xl:left-24 xl:mb-0"
         onClick={handleGoBackClick}
       >
         <ArrowIcon className="arrow-icon" />
@@ -84,7 +84,7 @@ const CauseSelection = () => {
           {error && <p>Error loading causes: {error.message}</p>}
           {!loading && (
             <div>
-              <div className="grid grid-rows-2 grid-flow-col gap-3 pb-6 pl-1 m-auto overflow-x-scroll touch-pan-x scroll-smooth lg:grid lg:grid-cols-3 lg:grid-rows-3 lg:overflow-hidden lg:w-fit">
+              <div className="custom-grid">
                 {causes &&
                   causes
                     .slice(0, 9)
@@ -104,8 +104,8 @@ const CauseSelection = () => {
           {selectedCause && <BoxInfo cause={selectedCause} screen={screen} />}
         </div>
       </div>
-      <div className="m-0 xl:mx-[38%]">
-        <div className="flex justify-center mt-10 order-2 lg:order-2">
+      <div className="m-0 align-top xl:mx-[38%]">
+        <div className="flex justify-center mt-6 order-2 lg:order-2">
           <ProgressBar selectedCards={selectedCards} />
         </div>
         <div

@@ -5,7 +5,7 @@ import useRegister from "../hocks/useRegister";
 import ArrowIcon from "@/components/ArrowIcon";
 import Divider from "@mui/material/Divider";
 import GoogleIcon from "@/components/GoogleIcon";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const SignUpScreen = () => {
   const router = useRouter();
@@ -45,7 +45,7 @@ const SignUpScreen = () => {
   return (
     <div className="flex flex-col items-center min-h-screen min-w-[320px] mx-auto pt-6 bg-white relative">
       <div
-        className="custom-button-back lg:absolute lg:top-[32px] lg:left-[-48px] inline-flex m-2 ml-[8%] static self-start"
+        className="custom-button-back inline-flex m-2 ml-[8%] static self-start lg:absolute lg:top-[32px] lg:left-[-48px]"
         onClick={handleGoBackClick}
       >
         <ArrowIcon className="arrow-icon" />
@@ -60,7 +60,7 @@ const SignUpScreen = () => {
         </div>
       </div>
       <div className="max-w-sm w-full bg-white px-3 pb-3">
-        <div className="flex justify-center py-3 mb-4 gap-2 font-bold border border-solid border-black rounded-full hover:shadow-[1px_1px_3px_rgba(1,1,1,1)] cursor-pointer">
+        <div className="google-btn">
           <GoogleIcon />
           <p>Continue</p>
           <p>With Google</p>
